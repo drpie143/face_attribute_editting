@@ -1,0 +1,93 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Raw dataset (too large for Git — download via Kaggle API)
+data/raw/
+
+# Processed data (regenerated from raw)
+data/processed/
+
+# Cache directories
+cache/
+*.tar
+tar_cache/
+
+# Training runs & checkpoints (large binaries)
+runs/
+checkpoints/
+
+# LoRA weights in runs (keep exports/ tracked if desired)
+runs/**/loras/
+runs/**/edited/
+
+# Model weights (use Git LFS or external hosting)
+*.safetensors
+*.bin
+*.ckpt
+*.pt
+!requirements.txt
+
+# Logs
+*.log
+logs/
+
+# Kaggle / Colab temp
+dataset_downloads/
+local_data/
+runtime_repo/
+
+# Temporary / helper scripts
+parse_nb*.py
+extract_all.py
+all_cells_source.txt
+
+# Large notebook outputs
+*.ipynb_output/
+
+# Project outputs, caches, and large artifacts
+exports/
+results/
+*.zip
+
+# Face-attr-edit workspace outputs
+face-attr-edit/processed/
+face-attr-edit/cache/
+face-attr-edit/runs/
+face-attr-edit/exports/
+
+# Temporary and env files
+.env
+.env.local
+.pytest_cache/
+*.sqlite3
+*.db
+
+# Ensure model weights are ignored (also listed above)
+*.safetensors
+
