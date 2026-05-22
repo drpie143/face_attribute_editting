@@ -1,0 +1,27 @@
+# Core
+packaging>=24.0
+numpy>=2.0,<2.6
+Pillow>=10.4,<12
+opencv-python-headless>=4.12,<5
+matplotlib>=3.9,<4
+pandas>=2.2.3,<2.4
+tqdm>=4.67,<5
+scikit-learn>=1.6,<2
+PyYAML>=6.0.3,<6.1
+rich>=13.9,<15
+tabulate>=0.9,<1
+
+# Diffusion / LoRA
+diffusers==0.31.0
+transformers>=4.46,<5
+accelerate>=1.1,<2
+peft>=0.13,<1
+safetensors>=0.4.5,<1
+huggingface_hub>=0.26,<1
+datasets>=3.1
+
+# Evaluation
+lpips==0.1.4
+
+# Data download
+kaggle>=1.6.17,<2
