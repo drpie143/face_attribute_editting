@@ -40,17 +40,6 @@ models:
     max_train_steps: 2000
     guidance_scale: 6.5
 
-  playground25:
-    pretrained_model_name_or_path: "playgroundai/playground-v2.5-1024px-aesthetic"
-    architecture: sdxl
-    resolution: 768
-    train_batch_size: 1
-    gradient_accumulation_steps: 4
-    learning_rate: 4.0e-5
-    rank: 16
-    max_train_steps: 2000
-    guidance_scale: 5.5
-
 # ---------------------------------------------------------------------------
 # Editing
 # ---------------------------------------------------------------------------
@@ -59,16 +48,17 @@ edit:
   num_candidates_per_image: 3
   num_inference_steps: 30
   strength:
-    add_eyeglasses: {sd15: 0.86, sdxl: 0.84, playground25: 0.84}
-    make_smiling:   {sd15: 0.78, sdxl: 0.76, playground25: 0.76}
-    make_older:     {sd15: 0.88, sdxl: 0.86, playground25: 0.86}
+    add_eyeglasses: {sd15: 0.86, sdxl: 0.84}
+    make_smiling:   {sd15: 0.78, sdxl: 0.76}
+    make_older:     {sd15: 0.88, sdxl: 0.86}
   negative_prompt_common: >-
     different person, identity change, deformed face, blurry, low quality, artifacts
   selection_weights:
-    attr_score: 0.45
-    identity_score: 0.30
-    background_score: 0.15
-    lpips_score: 0.10
+    attr_score: 0.70
+    attr_delta: 0.15
+    identity_score: 0.00
+    background_score: 0.10
+    lpips_score: 0.05
 
 # ---------------------------------------------------------------------------
 # Prompts

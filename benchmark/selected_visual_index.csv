@@ -1,0 +1,10 @@
+task,image_id,asset_path,source_individual_path,layout,chosen_model,notes
+add_eyeglasses,04181,docs/assets/examples/add_eyeglasses_04181_manual.jpg,exports/comparison_grids/individual/add_eyeglasses_04181_manual.png,original | sd15 best | sdxl best,,
+add_eyeglasses,12340,docs/assets/examples/add_eyeglasses_12340_manual.jpg,exports/comparison_grids/individual/add_eyeglasses_12340_manual.png,original | sd15 best | sdxl best,,
+add_eyeglasses,03108,docs/assets/examples/add_eyeglasses_03108_manual.jpg,exports/comparison_grids/individual/add_eyeglasses_03108_manual.png,original | sd15 best | sdxl best,,03180 requested but no output found locally; using 03108
+make_smiling,02457,docs/assets/examples/make_smiling_02457_manual.jpg,exports/comparison_grids/individual/make_smiling_02457_manual.png,original | sd15 best | sdxl best,,
+make_smiling,05199,docs/assets/examples/make_smiling_05199_manual.jpg,exports/comparison_grids/individual/make_smiling_05199_manual.png,original | sd15 best | sdxl best,,
+make_smiling,22964,docs/assets/examples/make_smiling_22964_manual.jpg,exports/comparison_grids/individual/make_smiling_22964_manual.png,original | sd15 best | sdxl best,,
+make_older,00742,docs/assets/examples/make_older_00742_manual.jpg,exports/comparison_grids/individual/make_older_00742_manual.png,original | sd15 best | sdxl best,,
+make_older,21163,docs/assets/examples/make_older_21163_manual.jpg,exports/comparison_grids/individual/make_older_21163_manual.png,original | sd15 best | sdxl best,,
+make_older,20842,docs/assets/examples/make_older_20842_manual.jpg,exports/comparison_grids/individual/make_older_20842_manual.png,original | sd15 best | sdxl best,,

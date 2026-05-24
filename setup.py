@@ -17,6 +17,7 @@ setup(
         "tqdm>=4.67,<5",
         "scikit-learn>=1.6,<2",
         "PyYAML>=6.0.3,<6.1",
+        "streamlit>=1.50,<2",
         "diffusers==0.31.0",
         "transformers>=4.46,<5",
         "accelerate>=1.1,<2",

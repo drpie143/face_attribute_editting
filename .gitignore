@@ -27,7 +27,7 @@ env/
 .DS_Store
 Thumbs.db
 
-# Raw dataset (too large for Git — download via Kaggle API)
+# Raw dataset (too large for Git - download via Kaggle API)
 data/raw/
 
 # Processed data (regenerated from raw)
@@ -38,15 +38,15 @@ cache/
 *.tar
 tar_cache/
 
-# Training runs & checkpoints (large binaries)
+# Training runs and checkpoints (large binaries)
 runs/
 checkpoints/
 
-# LoRA weights in runs (keep exports/ tracked if desired)
+# LoRA weights in runs
 runs/**/loras/
 runs/**/edited/
 
-# Model weights (use Git LFS or external hosting)
+# Model weights
 *.safetensors
 *.bin
 *.ckpt
@@ -69,11 +69,35 @@ all_cells_source.txt
 
 # Large notebook outputs
 *.ipynb_output/
+project.ipynb
 
 # Project outputs, caches, and large artifacts
 exports/
 results/
 *.zip
+
+# Lightweight public assets/results are intentionally tracked
+!docs/
+!docs/assets/
+!docs/assets/**
+!benchmark/
+!benchmark/**
+
+# Legacy panel-derived chart images are local sanity checks, not README assets
+benchmark/figures/model_average_scores.png
+benchmark/figures/visual_l1_by_task.png
+benchmark/figures/visual_psnr_by_task.png
+benchmark/figures/visual_ssim_by_task.png
+benchmark/figures/standard_attribute_success_sd15.png
+benchmark/figures/standard_background_ssim_sd15.png
+benchmark/figures/standard_lpips_sd15.png
+
+# Local benchmark diagnostics not used in the public README
+benchmark/candidate_rerank_analysis.csv
+benchmark/standard_metrics_available.csv
+benchmark/standard_benchmark_status.csv
+benchmark/visual_metrics_long.csv
+benchmark/visual_metrics_summary.csv
 
 # Face-attr-edit workspace outputs
 face-attr-edit/processed/
@@ -87,7 +111,3 @@ face-attr-edit/exports/
 .pytest_cache/
 *.sqlite3
 *.db
-
-# Ensure model weights are ignored (also listed above)
-*.safetensors
-

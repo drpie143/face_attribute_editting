@@ -109,10 +109,12 @@ def evaluate_edits(run_dir: Optional[Path] = None,
             target = 0.0
             attr_success = p_after[idx] < thresholds[idx]
             attr_score = 1.0 - float(p_after[idx])
+            attr_delta = max(0.0, float(p_before[idx]) - float(p_after[idx]))
         else:
             target = 1.0
             attr_success = p_after[idx] >= thresholds[idx]
             attr_score = float(p_after[idx])
+            attr_delta = max(0.0, float(p_after[idx]) - float(p_before[idx]))
 
         selected = meta["candidates"][meta["selected_candidate"]]
         ident = selected.get("identity_similarity")
@@ -131,6 +133,8 @@ def evaluate_edits(run_dir: Optional[Path] = None,
             "attr_prob_before": float(p_before[idx]),
             "attr_prob_after": float(p_after[idx]),
             "attr_score": attr_score,
+            "attr_delta": attr_delta,
+            "attr_direction_success": bool(attr_delta >= 0.05),
             "attr_success": bool(attr_success),
             "identity_similarity": ident,
             "lpips": lpips_distance(orig, edited),
@@ -158,7 +162,10 @@ def evaluate_edits(run_dir: Optional[Path] = None,
         agg = {
             "n": ("image_id", "count"),
             "attr_success_rate": ("attr_success", "mean"),
+            "attr_direction_success_rate": ("attr_direction_success", "mean"),
             "attr_prob_after_mean": ("attr_prob_after", "mean"),
+            "attr_score_mean": ("attr_score", "mean"),
+            "attr_delta_mean": ("attr_delta", "mean"),
             "identity_similarity_mean": ("identity_similarity", "mean"),
             "lpips_mean": ("lpips", "mean"),
             "background_l1_mean": ("background_l1", "mean"),

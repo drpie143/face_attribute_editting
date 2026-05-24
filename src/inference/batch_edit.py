@@ -39,11 +39,13 @@ def _score_candidate(m: Dict[str, Any]) -> float:
     bg = 1.0 - min(float(m.get("background_l1", 1.0)) / 0.08, 1.0)
     lp = m.get("lpips")
     lp_score = 0.5 if lp is None else 1.0 - min(float(lp) / 0.35, 1.0)
+    attr_delta = min(float(m.get("attr_delta", 0.0)) / 0.35, 1.0)
     return float(
         w["attr_score"] * m.get("attr_score", 0.5)
-        + w["identity_score"] * ident
-        + w["background_score"] * bg
-        + w["lpips_score"] * lp_score
+        + w.get("attr_delta", 0.0) * attr_delta
+        + w.get("identity_score", 0.0) * ident
+        + w.get("background_score", 0.0) * bg
+        + w.get("lpips_score", 0.0) * lp_score
     )
 
 

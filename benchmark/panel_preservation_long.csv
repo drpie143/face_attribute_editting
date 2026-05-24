@@ -1,0 +1,73 @@
+task,image_id,model_id,model_label,n_panel_crop_top_px,l1_to_original,ssim_to_original,psnr_to_original,source_panel
+add_eyeglasses,03108,sd15,SD 1.5,130,0.0616268627345562,0.6375306844711304,17.507126317090293,exports/comparison_grids/individual/add_eyeglasses_03108_manual.png
+add_eyeglasses,03108,sdxl,SDXL,130,0.08700819313526154,0.6062277555465698,15.47890447671082,exports/comparison_grids/individual/add_eyeglasses_03108_manual.png
+add_eyeglasses,04181,sd15,SD 1.5,130,0.07479481399059296,0.6045628786087036,14.569962456194588,exports/comparison_grids/individual/add_eyeglasses_04181_manual.png
+add_eyeglasses,04181,sdxl,SDXL,130,0.11703874170780182,0.5610017776489258,11.881757820932632,exports/comparison_grids/individual/add_eyeglasses_04181_manual.png
+add_eyeglasses,08028,sd15,SD 1.5,130,0.05901731550693512,0.6439006924629211,17.853002038683304,exports/comparison_grids/individual/add_eyeglasses_08028_manual.png
+add_eyeglasses,08028,sdxl,SDXL,130,0.08668087422847748,0.6205794811248779,15.59422039004877,exports/comparison_grids/individual/add_eyeglasses_08028_manual.png
+add_eyeglasses,08943,sd15,SD 1.5,130,0.05800297111272812,0.6196508407592773,16.459354321678248,exports/comparison_grids/individual/add_eyeglasses_08943_manual.png
+add_eyeglasses,08943,sdxl,SDXL,130,0.0898451954126358,0.5847960710525513,13.907377617317934,exports/comparison_grids/individual/add_eyeglasses_08943_manual.png
+add_eyeglasses,12340,sd15,SD 1.5,130,0.07357385754585266,0.6243575811386108,16.168565062616548,exports/comparison_grids/individual/add_eyeglasses_12340_manual.png
+add_eyeglasses,12340,sdxl,SDXL,130,0.11593043804168701,0.5685203671455383,13.553417365495136,exports/comparison_grids/individual/add_eyeglasses_12340_manual.png
+add_eyeglasses,13707,sd15,SD 1.5,130,0.057978320866823196,0.7002434134483337,15.653582028188659,exports/comparison_grids/individual/add_eyeglasses_13707_manual.png
+add_eyeglasses,13707,sdxl,SDXL,130,0.09072955697774887,0.662294328212738,13.11122019723335,exports/comparison_grids/individual/add_eyeglasses_13707_manual.png
+add_eyeglasses,17550,sd15,SD 1.5,130,0.11594872921705246,0.6119790077209473,12.614254440892484,exports/comparison_grids/individual/add_eyeglasses_17550_manual.png
+add_eyeglasses,17550,sdxl,SDXL,130,0.09815841913223267,0.6424282789230347,14.461294160082684,exports/comparison_grids/individual/add_eyeglasses_17550_manual.png
+add_eyeglasses,18079,sd15,SD 1.5,130,0.08631622791290283,0.49589982628822327,14.899010713773066,exports/comparison_grids/individual/add_eyeglasses_18079_manual.png
+add_eyeglasses,18079,sdxl,SDXL,130,0.1267492175102234,0.462104856967926,12.438802898694119,exports/comparison_grids/individual/add_eyeglasses_18079_manual.png
+add_eyeglasses,18240,sd15,SD 1.5,130,0.06808830052614212,0.6098451614379883,16.43346110558604,exports/comparison_grids/individual/add_eyeglasses_18240_manual.png
+add_eyeglasses,18240,sdxl,SDXL,130,0.10660368204116821,0.5489118099212646,13.87035913955857,exports/comparison_grids/individual/add_eyeglasses_18240_manual.png
+add_eyeglasses,21264,sd15,SD 1.5,130,0.0778360515832901,0.6040788888931274,15.255233032870333,exports/comparison_grids/individual/add_eyeglasses_21264_manual.png
+add_eyeglasses,21264,sdxl,SDXL,130,0.12196745723485947,0.534545361995697,12.447943518937223,exports/comparison_grids/individual/add_eyeglasses_21264_manual.png
+add_eyeglasses,23029,sd15,SD 1.5,130,0.07275024801492691,0.633101761341095,16.381995759458352,exports/comparison_grids/individual/add_eyeglasses_23029_manual.png
+add_eyeglasses,23029,sdxl,SDXL,130,0.10970963537693024,0.5881789326667786,13.8851105607906,exports/comparison_grids/individual/add_eyeglasses_23029_manual.png
+add_eyeglasses,26023,sd15,SD 1.5,130,0.07746027410030365,0.6348631381988525,15.07705984640914,exports/comparison_grids/individual/add_eyeglasses_26023_manual.png
+add_eyeglasses,26023,sdxl,SDXL,130,0.11624560505151749,0.586481511592865,12.738632090093988,exports/comparison_grids/individual/add_eyeglasses_26023_manual.png
+make_older,00742,sd15,SD 1.5,130,0.06324522942304611,0.6286565065383911,17.736039306356084,exports/comparison_grids/individual/make_older_00742_manual.png
+make_older,00742,sdxl,SDXL,130,0.08631102740764618,0.6186788082122803,15.621445829937375,exports/comparison_grids/individual/make_older_00742_manual.png
+make_older,02346,sd15,SD 1.5,130,0.07813598215579987,0.4469846189022064,15.497071401265593,exports/comparison_grids/individual/make_older_02346_manual.png
+make_older,02346,sdxl,SDXL,130,0.11643640697002411,0.39441436529159546,12.786179343706097,exports/comparison_grids/individual/make_older_02346_manual.png
+make_older,06528,sd15,SD 1.5,130,0.07125097513198853,0.571969211101532,15.7710605428582,exports/comparison_grids/individual/make_older_06528_manual.png
+make_older,06528,sdxl,SDXL,130,0.10544567555189133,0.5287426710128784,13.127322263080163,exports/comparison_grids/individual/make_older_06528_manual.png
+make_older,14368,sd15,SD 1.5,130,0.08891858160495758,0.5439438223838806,14.158674111892218,exports/comparison_grids/individual/make_older_14368_manual.png
+make_older,14368,sdxl,SDXL,130,0.1408308893442154,0.48366159200668335,11.216175966457298,exports/comparison_grids/individual/make_older_14368_manual.png
+make_older,14759,sd15,SD 1.5,130,0.060577500611543655,0.6846856474876404,16.75238322364556,exports/comparison_grids/individual/make_older_14759_manual.png
+make_older,14759,sdxl,SDXL,130,0.09337138384580612,0.6461659669876099,14.206411037291431,exports/comparison_grids/individual/make_older_14759_manual.png
+make_older,20122,sd15,SD 1.5,130,0.07145573943853378,0.63240647315979,17.1628651517475,exports/comparison_grids/individual/make_older_20122_manual.png
+make_older,20122,sdxl,SDXL,130,0.10622822493314743,0.5871208906173706,14.474085503266869,exports/comparison_grids/individual/make_older_20122_manual.png
+make_older,20604,sd15,SD 1.5,130,0.07648966461420059,0.4967144727706909,16.582654256330557,exports/comparison_grids/individual/make_older_20604_manual.png
+make_older,20604,sdxl,SDXL,130,0.10777927190065384,0.4571804404258728,14.060174804460692,exports/comparison_grids/individual/make_older_20604_manual.png
+make_older,20842,sd15,SD 1.5,130,0.07851016521453857,0.5780985355377197,16.02821181286799,exports/comparison_grids/individual/make_older_20842_manual.png
+make_older,20842,sdxl,SDXL,130,0.12119286507368088,0.5262933373451233,13.454852020775128,exports/comparison_grids/individual/make_older_20842_manual.png
+make_older,21163,sd15,SD 1.5,130,0.06567747890949249,0.6500314474105835,17.481346469486915,exports/comparison_grids/individual/make_older_21163_manual.png
+make_older,21163,sdxl,SDXL,130,0.09786543995141983,0.6060218811035156,14.890048539613707,exports/comparison_grids/individual/make_older_21163_manual.png
+make_older,21264,sd15,SD 1.5,130,0.08012876659631729,0.6152396202087402,15.29963652400242,exports/comparison_grids/individual/make_older_21264_manual.png
+make_older,21264,sdxl,SDXL,130,0.12312720715999603,0.5376446843147278,12.422274722068016,exports/comparison_grids/individual/make_older_21264_manual.png
+make_older,22256,sd15,SD 1.5,130,0.0759534016251564,0.5626227259635925,17.234273658423717,exports/comparison_grids/individual/make_older_22256_manual.png
+make_older,22256,sdxl,SDXL,130,0.09979178756475449,0.5527366399765015,15.253046694684976,exports/comparison_grids/individual/make_older_22256_manual.png
+make_older,27253,sd15,SD 1.5,130,0.09696140885353088,0.4271380305290222,14.522269719234997,exports/comparison_grids/individual/make_older_27253_manual.png
+make_older,27253,sdxl,SDXL,130,0.13005393743515015,0.39668214321136475,12.486523919097232,exports/comparison_grids/individual/make_older_27253_manual.png
+make_smiling,02457,sd15,SD 1.5,130,0.07482832670211792,0.5834302306175232,16.449694798274745,exports/comparison_grids/individual/make_smiling_02457_manual.png
+make_smiling,02457,sdxl,SDXL,130,0.11595449596643448,0.5215173959732056,13.709780440143987,exports/comparison_grids/individual/make_smiling_02457_manual.png
+make_smiling,05199,sd15,SD 1.5,130,0.08740053325891495,0.4873480498790741,14.862430733354252,exports/comparison_grids/individual/make_smiling_05199_manual.png
+make_smiling,05199,sdxl,SDXL,130,0.136946901679039,0.4065495729446411,12.029754168490747,exports/comparison_grids/individual/make_smiling_05199_manual.png
+make_smiling,05500,sd15,SD 1.5,130,0.06902790814638138,0.583111584186554,17.466218089573673,exports/comparison_grids/individual/make_smiling_05500_manual.png
+make_smiling,05500,sdxl,SDXL,130,0.10424041748046875,0.5492650866508484,15.169176791126326,exports/comparison_grids/individual/make_smiling_05500_manual.png
+make_smiling,09418,sd15,SD 1.5,130,0.06876064836978912,0.6016106009483337,16.86043915156892,exports/comparison_grids/individual/make_smiling_09418_manual.png
+make_smiling,09418,sdxl,SDXL,130,0.10660544782876968,0.5533645153045654,14.402396790720633,exports/comparison_grids/individual/make_smiling_09418_manual.png
+make_smiling,12163,sd15,SD 1.5,130,0.06552515923976898,0.6430079340934753,16.11238451527076,exports/comparison_grids/individual/make_smiling_12163_manual.png
+make_smiling,12163,sdxl,SDXL,130,0.10718448460102081,0.5847912430763245,13.424584049277431,exports/comparison_grids/individual/make_smiling_12163_manual.png
+make_smiling,13707,sd15,SD 1.5,130,0.053836822509765625,0.7097899913787842,15.884375043399661,exports/comparison_grids/individual/make_smiling_13707_manual.png
+make_smiling,13707,sdxl,SDXL,130,0.08952712267637253,0.662423312664032,13.124163171698147,exports/comparison_grids/individual/make_smiling_13707_manual.png
+make_smiling,17846,sd15,SD 1.5,130,0.07460413873195648,0.5594549775123596,16.856403453939887,exports/comparison_grids/individual/make_smiling_17846_manual.png
+make_smiling,17846,sdxl,SDXL,130,0.10193546116352081,0.5330089926719666,14.898706811542182,exports/comparison_grids/individual/make_smiling_17846_manual.png
+make_smiling,19132,sd15,SD 1.5,130,0.09205646812915802,0.49655675888061523,15.172234922981122,exports/comparison_grids/individual/make_smiling_19132_manual.png
+make_smiling,19132,sdxl,SDXL,130,0.13652445375919342,0.41961443424224854,12.668686860080012,exports/comparison_grids/individual/make_smiling_19132_manual.png
+make_smiling,21264,sd15,SD 1.5,130,0.07391936331987381,0.6196588277816772,15.507301689363826,exports/comparison_grids/individual/make_smiling_21264_manual.png
+make_smiling,21264,sdxl,SDXL,130,0.12227193266153336,0.5376314520835876,12.43297497099463,exports/comparison_grids/individual/make_smiling_21264_manual.png
+make_smiling,22256,sd15,SD 1.5,130,0.0664307251572609,0.573997437953949,17.68849227632943,exports/comparison_grids/individual/make_smiling_22256_manual.png
+make_smiling,22256,sdxl,SDXL,130,0.10136313736438751,0.5486729145050049,15.150593675334488,exports/comparison_grids/individual/make_smiling_22256_manual.png
+make_smiling,22964,sd15,SD 1.5,130,0.061178166419267654,0.6757474541664124,16.256439302839816,exports/comparison_grids/individual/make_smiling_22964_manual.png
+make_smiling,22964,sdxl,SDXL,130,0.09893372654914856,0.6329701542854309,13.475253061573627,exports/comparison_grids/individual/make_smiling_22964_manual.png
+make_smiling,27235,sd15,SD 1.5,130,0.06464356929063797,0.6527546644210815,16.711903322745886,exports/comparison_grids/individual/make_smiling_27235_manual.png
+make_smiling,27235,sdxl,SDXL,130,0.101419597864151,0.6024701595306396,14.06822528749666,exports/comparison_grids/individual/make_smiling_27235_manual.png
