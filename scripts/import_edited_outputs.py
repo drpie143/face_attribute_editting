@@ -22,6 +22,17 @@ sys.path.append(str(Path(__file__).resolve().parent.parent))
 from src.config import PATHS, TASKS
 
 
+def safe_extract_zip(zip_file: zipfile.ZipFile, destination: Path) -> None:
+    destination = destination.resolve()
+    for member in zip_file.infolist():
+        target = (destination / member.filename).resolve()
+        try:
+            target.relative_to(destination)
+        except ValueError:
+            raise RuntimeError(f"Refusing unsafe zip member path: {member.filename}")
+    zip_file.extractall(destination)
+
+
 def find_model_edited_dir(source_root: Path, model_id: str) -> Path:
     """Find a folder that contains task subfolders for the requested model."""
     source_root = source_root.resolve()
@@ -67,7 +78,7 @@ def copy_tree_contents(src: Path, dst: Path, replace: bool = False) -> None:
     for item in src.iterdir():
         target = dst / item.name
         if item.is_dir():
-            shutil.copytree(item, target, dirs_exist_ok=True)
+            copy_tree_contents(item, target, replace=replace)
         else:
             if target.exists() and not replace:
                 continue
@@ -121,7 +132,7 @@ def main() -> None:
             extract_dir.mkdir(parents=True, exist_ok=True)
             print(f"Extracting {source} ...")
             with zipfile.ZipFile(source, "r") as zf:
-                zf.extractall(extract_dir)
+                safe_extract_zip(zf, extract_dir)
             import_root = extract_dir
         else:
             import_root = source

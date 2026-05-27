@@ -1,5 +1,5 @@
 """
-Qualitative comparison grids: original → mask → edited, side-by-side.
+Qualitative comparison grids: original, mask, and edited images.
 """
 
 from __future__ import annotations
@@ -69,7 +69,7 @@ def generate_qualitative_grid(
                         axes[i, col].imshow(edited)
                     except Exception:
                         pass
-                    success = "✓" if model_row.iloc[0].get("attr_success", False) else "✗"
+                    success = "OK" if model_row.iloc[0].get("attr_success", False) else "FAIL"
                     axes[i, col].set_title(f"{model_id} {success}", fontsize=9)
                 else:
                     axes[i, col].set_title(f"{model_id}\n(no result)", fontsize=9)

@@ -1,7 +1,7 @@
 """
 EfficientNet-B0 multi-label attribute classifier for face attributes.
 
-Predicts: Eyeglasses, Smiling, Young — used both for candidate selection
+Predicts: Eyeglasses, Smiling, Young - used both for candidate selection
 during editing and for evaluation.
 """
 

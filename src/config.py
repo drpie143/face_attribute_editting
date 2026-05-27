@@ -61,10 +61,10 @@ RESOLUTIONS: List[int] = CFG["data"]["resolutions"]
 TARGET_PROMPTS: Dict[str, str] = CFG["prompts"]["target"]
 NEGATIVE_PROMPTS: Dict[str, str] = CFG["prompts"]["negative"]
 
-# Task → attribute index mapping
+# Task to attribute index mapping
 TASK_TO_ATTR_INDEX = {"add_eyeglasses": 0, "make_smiling": 1, "make_older": 2}
 
-# Task → mask key mapping
+# Task to mask key mapping
 TASK_TO_HARD_MASK_KEY = {
     "add_eyeglasses": "mask_eyeglasses_hard",
     "make_smiling": "mask_smile_hard",

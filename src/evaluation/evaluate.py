@@ -1,6 +1,6 @@
 """
 Evaluate edited images: compute attribute accuracy, LPIPS, SSIM, etc.
-Produces results_long.csv (per-image) and results_summary.csv (per-model×task).
+Produces results_long.csv (per-image) and results_summary.csv (per model/task).
 """
 
 from __future__ import annotations
@@ -33,6 +33,12 @@ from src.models.classifier import build_attr_classifier, predict_attrs
 
 def load_classifier_for_eval(path: Path):
     """Load trained classifier for evaluation. Returns (model, device, thresholds)."""
+    if not Path(path).exists():
+        raise FileNotFoundError(
+            f"Classifier checkpoint not found: {path}. "
+            "Train one with `python scripts/run_training.py --classifier` "
+            "or pass --classifier-path."
+        )
     device = "cuda" if torch.cuda.is_available() else "cpu"
     ckpt = torch.load(path, map_location=device, weights_only=False)
     model = build_attr_classifier(False)
@@ -157,7 +163,7 @@ def evaluate_edits(run_dir: Optional[Path] = None,
     results_long.to_csv(long_path, index=False)
     print(f"[SAVED] {long_path} ({len(results_long)} rows)")
 
-    # Summary per model × task
+    # Summary per model/task
     if len(results_long) > 0:
         agg = {
             "n": ("image_id", "count"),

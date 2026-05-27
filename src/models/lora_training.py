@@ -245,7 +245,7 @@ def run_lora_training(
     if src:
         dst = exports_dir / f"{model_id}_faceattr_lora{src.suffix}"
         shutil.copy2(src, dst)
-        print(f"[EXPORT] {src} → {dst}")
+        print(f"[EXPORT] {src} -> {dst}")
 
     cleanup_runtime_memory(model_id)
     return output_dir

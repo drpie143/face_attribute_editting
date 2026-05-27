@@ -20,7 +20,7 @@ from src.inference.batch_edit import batch_edit_model
 
 def main():
     parser = argparse.ArgumentParser(description="Run batch face attribute editing inference.")
-    parser.add_argument("--model-id", choices=list(MODELS.keys()), required=True, help="Model ID of the LoRA to train.")
+    parser.add_argument("--model-id", choices=list(MODELS.keys()), required=True, help="Model ID of the LoRA to run.")
     parser.add_argument("--smoke", action="store_true", help="Run in smoke-test mode (2 samples per task).")
     parser.add_argument("--samples-per-task", type=int, default=None, help="Number of samples to edit per task.")
     parser.add_argument("--seed", type=int, default=SEED, help="Random seed for reproducibility.")

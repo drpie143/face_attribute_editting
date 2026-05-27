@@ -21,7 +21,7 @@ from src.evaluation.benchmark import run_benchmark
 def main():
     parser = argparse.ArgumentParser(description="Run cross-model evaluation benchmark.")
     parser.add_argument("--results-csv", type=str, default=None,
-                        help="Path to the unified results_summary.csv or results_long.csv.")
+                        help="Path to a results_summary.csv file.")
     parser.add_argument("--run-dir", type=str, default=None,
                         help="Path to the active run directory (to look for results_summary.csv).")
     parser.add_argument("--output-dir", type=str, default=None,

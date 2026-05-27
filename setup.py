@@ -1,4 +1,4 @@
-from setuptools import setup, find_packages
+from setuptools import find_packages, setup
 
 setup(
     name="face-attr-edit",
@@ -6,9 +6,9 @@ setup(
     description="Face Attribute Editing via LoRA-Finetuned Diffusion Models",
     author="Khoa Ngo",
     python_requires=">=3.10",
-    packages=find_packages(where="src"),
-    package_dir={"": "src"},
+    packages=find_packages(),
     install_requires=[
+        "packaging>=24.0",
         "numpy>=2.0,<2.6",
         "Pillow>=10.4,<12",
         "opencv-python-headless>=4.12,<5",
@@ -17,12 +17,18 @@ setup(
         "tqdm>=4.67,<5",
         "scikit-learn>=1.6,<2",
         "PyYAML>=6.0.3,<6.1",
+        "tabulate>=0.9,<1",
         "streamlit>=1.50,<2",
+        "torch>=2.4,<3",
+        "torchvision>=0.19,<1",
         "diffusers==0.31.0",
         "transformers>=4.46,<5",
         "accelerate>=1.1,<2",
         "peft>=0.13,<1",
         "safetensors>=0.4.5,<1",
+        "huggingface_hub>=0.26,<1",
+        "datasets>=3.1,<4",
         "lpips==0.1.4",
+        "kaggle>=1.6.17,<2",
     ],
 )

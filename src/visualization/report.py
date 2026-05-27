@@ -55,8 +55,8 @@ def generate_report(
         "",
         "## 1. Goal",
         "",
-        "Benchmark SD1.5 and SDXL with the same mask-native inpainting "
-        "workflow for face attribute editing.",
+        "Benchmark the SDXL base 1.0 LoRA baseline against an SD 1.5 LoRA "
+        "comparison model with the same mask-native inpainting workflow.",
         "",
         "## 2. Environment",
         "",
@@ -129,8 +129,8 @@ def generate_report(
         "is applied at inference with masks.",
         "- Identity preservation is inspected qualitatively in this report; the "
         "public benchmark focuses on attribute and background-preservation metrics.",
-        "- Playground v2.5 is excluded from the final report because visual "
-        "inspection showed noisy inpainting artifacts.",
+        "- Only the two final adapters, `sdxl` and `sd15`, are included in "
+        "the benchmark and report.",
         "",
     ])
 

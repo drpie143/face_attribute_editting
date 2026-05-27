@@ -1,5 +1,5 @@
 # ============================================================================
-# Face Attribute Editing — Default Configuration
+# Face Attribute Editing - Default Configuration
 # ============================================================================
 
 seed: 42
@@ -18,17 +18,6 @@ tasks:
 # Models
 # ---------------------------------------------------------------------------
 models:
-  sd15:
-    pretrained_model_name_or_path: "runwayml/stable-diffusion-v1-5"
-    architecture: sd15
-    resolution: 512
-    train_batch_size: 2
-    gradient_accumulation_steps: 4
-    learning_rate: 1.0e-4
-    rank: 16
-    max_train_steps: 2000
-    guidance_scale: 7.5
-
   sdxl:
     pretrained_model_name_or_path: "stabilityai/stable-diffusion-xl-base-1.0"
     architecture: sdxl
@@ -39,6 +28,17 @@ models:
     rank: 16
     max_train_steps: 2000
     guidance_scale: 6.5
+
+  sd15:
+    pretrained_model_name_or_path: "runwayml/stable-diffusion-v1-5"
+    architecture: sd15
+    resolution: 512
+    train_batch_size: 2
+    gradient_accumulation_steps: 4
+    learning_rate: 1.0e-4
+    rank: 16
+    max_train_steps: 2000
+    guidance_scale: 7.5
 
 # ---------------------------------------------------------------------------
 # Editing

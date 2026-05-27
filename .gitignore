@@ -37,6 +37,10 @@ data/processed/
 cache/
 *.tar
 tar_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
 
 # Training runs and checkpoints (large binaries)
 runs/
@@ -51,11 +55,18 @@ runs/**/edited/
 *.bin
 *.ckpt
 *.pt
+*.pth
+*.onnx
+random_states_*.pkl
 !requirements.txt
 
 # Logs
 *.log
 logs/
+wandb/
+mlruns/
+lightning_logs/
+events.out.tfevents.*
 
 # Kaggle / Colab temp
 dataset_downloads/
@@ -108,6 +119,9 @@ face-attr-edit/exports/
 # Temporary and env files
 .env
 .env.local
+.env.*
+!.env.example
+.streamlit/secrets.toml
 .pytest_cache/
 *.sqlite3
 *.db

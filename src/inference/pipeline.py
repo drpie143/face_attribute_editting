@@ -27,10 +27,15 @@ def load_pipeline(model_id: str, run_dir: Optional[Path] = None):
     run_dir = Path(run_dir or PATHS["run_dir"])
     lora_dir = run_dir / "loras" / model_id
 
-    kwargs = dict(torch_dtype=torch.float16, use_safetensors=True)
+    has_cuda = torch.cuda.is_available()
+    dtype = torch.float16 if has_cuda else torch.float32
+    kwargs = dict(torch_dtype=dtype, use_safetensors=True)
     try:
-        pipe = AutoPipelineForInpainting.from_pretrained(
-            base, variant="fp16", **kwargs)
+        if has_cuda:
+            pipe = AutoPipelineForInpainting.from_pretrained(
+                base, variant="fp16", **kwargs)
+        else:
+            pipe = AutoPipelineForInpainting.from_pretrained(base, **kwargs)
     except Exception:
         pipe = AutoPipelineForInpainting.from_pretrained(base, **kwargs)
 
@@ -56,10 +61,9 @@ def load_pipeline(model_id: str, run_dir: Optional[Path] = None):
                 print(f"[WARN] could not load fallback LoRA: {e}")
 
     if not loaded_lora:
-        print(f"[WARN] No LoRA weights found, using base model only.")
+        print("[WARN] No LoRA weights found, using base model only.")
 
-
-    device = "cuda" if torch.cuda.is_available() else "cpu"
+    device = "cuda" if has_cuda else "cpu"
     pipe.to(device)
     pipe.enable_attention_slicing()
     try:

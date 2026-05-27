@@ -21,12 +21,19 @@ from src.data.manifest import build_manifests
 
 def main():
     parser = argparse.ArgumentParser(description="Preprocess CelebAMask-HQ data and build manifests.")
+    parser.add_argument("--download-if-missing", action="store_true",
+                        help="Download raw Kaggle datasets first if local raw data is incomplete.")
     parser.add_argument("--max-images", type=int, default=2000, help="Maximum images to process.")
     parser.add_argument("--force", action="store_true", help="Force overwrite existing processed data.")
     parser.add_argument("--seed", type=int, default=SEED, help="Random seed for split reproducibility.")
     args = parser.parse_args()
 
     seed_everything(args.seed)
+
+    if args.download_if_missing:
+        from src.data.download import download_if_needed
+        print("=== Step 0: Checking/downloading raw datasets ===")
+        download_if_needed()
 
     print("=== Step 1: Preprocessing raw dataset and building masks ===")
     records = run_preprocessing(max_images=args.max_images, force=args.force)

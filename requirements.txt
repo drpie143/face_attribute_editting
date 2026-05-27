@@ -12,6 +12,10 @@ rich>=13.9,<15
 tabulate>=0.9,<1
 streamlit>=1.50,<2
 
+# PyTorch
+torch>=2.4,<3
+torchvision>=0.19,<1
+
 # Diffusion / LoRA
 diffusers==0.31.0
 transformers>=4.46,<5
@@ -19,7 +23,7 @@ accelerate>=1.1,<2
 peft>=0.13,<1
 safetensors>=0.4.5,<1
 huggingface_hub>=0.26,<1
-datasets>=3.1
+datasets>=3.1,<4
 
 # Evaluation
 lpips==0.1.4

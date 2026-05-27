@@ -1,5 +1,5 @@
 """
-Cross-model benchmark utilities for the final SD1.5 and SDXL LoRA adapters.
+Cross-model benchmark utilities for the final SDXL baseline and SD1.5 adapter.
 
 Reads result CSVs and produces:
   - Unified comparison table (Markdown + CSV)
@@ -25,8 +25,8 @@ from src.config import MODELS, PATHS, TASKS
 
 
 MODEL_META = {
-    "sd15": {"label": "SD 1.5", "color": "#4C72B0"},
     "sdxl": {"label": "SDXL", "color": "#DD8452"},
+    "sd15": {"label": "SD 1.5", "color": "#4C72B0"},
 }
 
 ALL_MODELS = {

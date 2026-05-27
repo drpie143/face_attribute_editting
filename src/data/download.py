@@ -81,7 +81,7 @@ def print_raw_data_status(prefix: str = "") -> None:
 
 
 # ---------------------------------------------------------------------------
-# CelebA txt → csv normalisation
+# CelebA txt to csv normalisation
 # ---------------------------------------------------------------------------
 def normalize_celeba_txt_to_csv() -> None:
     """Convert official CelebA .txt annotation files to .csv."""
@@ -99,13 +99,13 @@ def normalize_celeba_txt_to_csv() -> None:
             df = pd.read_csv(attr_txt, sep=r"\s+", skiprows=2,
                              names=["image_id"] + cols)
             df.to_csv(attr_csv, index=False)
-            print(f"[OK] converted {attr_txt.name} → {attr_csv.name}")
+            print(f"[OK] converted {attr_txt.name} -> {attr_csv.name}")
 
     if part_txt.exists() and not part_csv.exists():
         df = pd.read_csv(part_txt, sep=r"\s+", header=None,
                          names=["image_id", "partition"])
         df.to_csv(part_csv, index=False)
-        print(f"[OK] converted {part_txt.name} → {part_csv.name}")
+        print(f"[OK] converted {part_txt.name} -> {part_csv.name}")
 
 
 # ---------------------------------------------------------------------------
@@ -199,7 +199,7 @@ def download_if_needed(download_dir: Optional[Path] = None) -> None:
             else:
                 dst.parent.mkdir(parents=True, exist_ok=True)
                 shutil.copy2(src, dst)
-            print(f"[OK] {name} → {dst}")
+            print(f"[OK] {name} -> {dst}")
 
     # Handle mask dir name variants
     for mask_name in ["CelebAMask-HQ-mask-anno", "CelebA-HQ-mask-anno"]:
@@ -208,7 +208,7 @@ def download_if_needed(download_dir: Optional[Path] = None) -> None:
             dst = raw_maskhq / src.name
             if not dst.exists():
                 shutil.copytree(src, dst)
-                print(f"[OK] {mask_name} → {dst}")
+                print(f"[OK] {mask_name} -> {dst}")
             break
 
     # CelebA attributes
@@ -220,7 +220,7 @@ def download_if_needed(download_dir: Optional[Path] = None) -> None:
             dst = raw_celeba / name
             if not dst.exists():
                 shutil.copy2(src, dst)
-                print(f"[OK] {name} → {dst}")
+                print(f"[OK] {name} -> {dst}")
 
     normalize_celeba_txt_to_csv()
     print_raw_data_status("[AFTER DOWNLOAD] ")

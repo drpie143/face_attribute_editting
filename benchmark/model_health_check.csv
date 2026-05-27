@@ -1,3 +1,3 @@
 model_id,lora_exists,lora_bytes,safetensors_ok,tensor_count,individual_visuals,status
-sd15,True,12792952,True,256,36,final_included
 sdxl,True,46615272,True,1120,36,final_included
+sd15,True,12792952,True,256,36,final_included
