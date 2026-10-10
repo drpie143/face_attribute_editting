@@ -1,0 +1,6 @@
+# Gallery and benchmark dashboard only: no training stack or model downloads.
+streamlit>=1.50,<2
+pandas>=2.2.3,<2.4
+numpy>=2.0,<2.6
+Pillow>=10.4,<12
+PyYAML>=6.0.3,<6.1

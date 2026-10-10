@@ -9,7 +9,6 @@ from pathlib import Path
 from typing import Any, Dict, List, Optional
 
 import numpy as np
-import torch
 from PIL import Image
 from tqdm.auto import tqdm
 
@@ -29,10 +28,11 @@ from src.config import (
 from src.data.manifest import take_n
 from src.inference.pipeline import blend_with_soft_mask, load_pipeline, unload_pipeline
 from src.evaluation.metrics import background_l1, lpips_distance, identity_similarity
-from src.models.classifier import load_classifier, predict_attrs
 
 
 def _load_candidate_classifier(run_dir: Path):
+    from src.models.classifier import load_classifier
+
     ckpt = run_dir / "checkpoints" / "attr_classifier" / "best.pt"
     if not ckpt.exists():
         print(
@@ -96,6 +96,10 @@ def batch_edit_model(
     Run batch inpainting edits for a single model over all tasks.
     Returns list of per-image metadata dicts.
     """
+    import torch
+
+    from src.models.classifier import predict_attrs
+
     run_dir = Path(run_dir or PATHS["run_dir"])
     cfg = MODELS[model_id]
     res = int(cfg["resolution"])

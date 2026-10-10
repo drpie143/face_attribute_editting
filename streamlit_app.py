@@ -1,4 +1,5 @@
-import json
+import gc
+import importlib.util
 import sys
 from pathlib import Path
 
@@ -111,9 +112,11 @@ def show_benchmark_dashboard() -> None:
             st.caption(str(lora.relative_to(PROJECT_ROOT)) if lora.exists() else "No local weights detected")
 
     if not health.empty:
+        st.caption("The table below records the original benchmark run; local adapter availability is shown above.")
         st.dataframe(health, width="stretch")
 
     st.subheader("Benchmark Summary")
+    st.caption("12 samples per task/model, selected using the attribute classifier. These scores do not establish identity preservation or improvement over an unfine-tuned model.")
     if not comparison.empty:
         st.dataframe(comparison, width="stretch")
     else:
@@ -223,6 +226,13 @@ def show_interactive_editor() -> None:
         "Upload a face image and run one of the two final LoRA adapters. A simple geometric mask is used for custom images.",
     )
 
+    if not any(model_lora_path(model_id).exists() for model_id in MODELS):
+        st.info("Live editing requires the trained LoRA adapters. This checkout contains benchmark results and example images; use Browse Final Comparisons to explore them.")
+        return
+    if any(importlib.util.find_spec(name) is None for name in ("torch", "diffusers")):
+        st.info("Live editing requires the full inference dependencies from requirements.txt and a suitable GPU. The gallery and benchmark dashboard remain available.")
+        return
+
     uploaded = st.file_uploader("Face image", type=["jpg", "jpeg", "png"])
     if uploaded is None:
         st.info("Upload an image to start.")
@@ -235,6 +245,9 @@ def show_interactive_editor() -> None:
         st.image(source, caption="Input", width="stretch")
         task = st.selectbox("Task", TASKS, format_func=lambda t: TASK_LABELS.get(t, t))
         model_id = st.selectbox("Model", list(MODELS.keys()))
+        if not model_lora_path(model_id).exists():
+            st.warning("The selected model's LoRA adapter is not available on this machine.")
+            return
         strength = st.slider("Strength", 0.10, 1.00, float(MODELS[model_id].get("demo_strength", 0.55)), 0.05)
         guidance = st.slider("Guidance scale", 1.0, 15.0, float(MODELS[model_id].get("guidance_scale", 7.5)), 0.5)
         steps = st.slider("Inference steps", 10, 50, 25, 5)
@@ -244,10 +257,11 @@ def show_interactive_editor() -> None:
         return
 
     with right:
+        pipe = None
         try:
             import torch
 
-            from src.inference.pipeline import blend_with_soft_mask, load_pipeline, unload_pipeline
+            from src.inference.pipeline import blend_with_soft_mask, load_pipeline
 
             resolution = int(MODELS[model_id]["resolution"])
             image = center_square(source).resize((resolution, resolution), Image.Resampling.LANCZOS)
@@ -274,11 +288,16 @@ def show_interactive_editor() -> None:
                     ).images[0]
                 blend = blend_with_soft_mask(image, result, mask_soft)
 
-            unload_pipeline(pipe)
             st.image(blend, caption=f"{model_id} result", width="stretch")
         except Exception as exc:
             st.error(f"Interactive inference failed: {exc}")
             st.info("Check that Diffusers dependencies, CUDA, and the local LoRA weights are available.")
+        finally:
+            if pipe is not None:
+                del pipe
+                gc.collect()
+                if torch.cuda.is_available():
+                    torch.cuda.empty_cache()
 
 
 page = st.sidebar.radio(

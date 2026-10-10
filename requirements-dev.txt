@@ -1,1 +1,4 @@
+-r requirements-demo.txt
 pytest>=8,<9
+opencv-python-headless>=4.12,<5
+tqdm>=4.67,<5

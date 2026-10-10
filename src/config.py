@@ -14,7 +14,6 @@ from pathlib import Path
 from typing import Any, Dict, List, Optional
 
 import numpy as np
-import torch
 import yaml
 
 # ---------------------------------------------------------------------------
@@ -117,6 +116,8 @@ PATHS = setup_paths()
 # ---------------------------------------------------------------------------
 def seed_everything(seed: int = SEED) -> None:
     """Set all random seeds for reproducibility."""
+    import torch
+
     random.seed(seed)
     np.random.seed(seed)
     torch.manual_seed(seed)

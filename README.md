@@ -187,9 +187,11 @@ Face_Attr_Edit_Run_Inference_Eval_From_Drive.ipynb
 
 ## Demo
 
-Run the Streamlit demo:
+For the gallery/dashboard, install the lightweight dependencies; no GPU,
+model downloads or adapters are needed:
 
 ```bash
+pip install -r requirements-demo.txt
 streamlit run streamlit_app.py
 ```
 
@@ -198,6 +200,20 @@ The demo provides:
 - benchmark dashboard
 - final comparison browser
 - interactive editor for local LoRA weights
+
+Live editing additionally requires `requirements.txt` and the trained SDXL
+or SD 1.5 adapters. Missing or unloadable adapters fail explicitly rather
+than returning an unlabelled base-model result. The dashboard distinguishes
+saved benchmark health from weights available in the current checkout.
+
+The benchmark uses 12 samples per task/model with classifier-based candidate
+selection. LPIPS and background SSIM measure visual change and background
+preservation; they do not establish identity preservation or improvement
+over an unfine-tuned model.
+
+The Drive inference notebook contains an earlier three-model experiment.
+Align its model list with `src.config.MODELS` before using it to reproduce
+the final two-model benchmark.
 
 ## Notes
 

@@ -13,7 +13,6 @@ from typing import Optional
 
 import cv2
 import numpy as np
-import torch
 from PIL import Image
 
 
@@ -28,6 +27,7 @@ def _get_lpips_model():
         return _LPIPS_MODEL
     try:
         import lpips
+        import torch
         dev = "cuda" if torch.cuda.is_available() else "cpu"
         _LPIPS_MODEL = lpips.LPIPS(net="alex").to(dev)
         _LPIPS_MODEL.eval()
@@ -42,6 +42,8 @@ def lpips_distance(a_img: Image.Image, b_img: Image.Image) -> Optional[float]:
     model = _get_lpips_model()
     if model is None:
         return None
+    import torch
+
     a = np.array(a_img.convert("RGB").resize((256, 256))).astype(np.float32) / 127.5 - 1
     b = np.array(b_img.convert("RGB").resize((256, 256))).astype(np.float32) / 127.5 - 1
     ta = torch.from_numpy(a).permute(2, 0, 1).unsqueeze(0)
@@ -106,6 +108,7 @@ def _get_insightface_app():
     _INSIGHTFACE_TRIED = True
     try:
         from insightface.app import FaceAnalysis
+        import torch
         providers = (["CUDAExecutionProvider", "CPUExecutionProvider"]
                      if torch.cuda.is_available()
                      else ["CPUExecutionProvider"])
