@@ -211,9 +211,8 @@ selection. LPIPS and background SSIM measure visual change and background
 preservation; they do not establish identity preservation or improvement
 over an unfine-tuned model.
 
-The Drive inference notebook contains an earlier three-model experiment.
-Align its model list with `src.config.MODELS` before using it to reproduce
-the final two-model benchmark.
+If reusing an earlier three-model Drive experiment, align its notebook model
+list with `src.config.MODELS` before reproducing the final two-model benchmark.
 
 ## Notes
 
